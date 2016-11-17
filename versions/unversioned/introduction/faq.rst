@@ -32,6 +32,7 @@ is just to make Exponent work really well and be as popular as possible.
 What is the difference between Exponent and React Native?
 ---------------------------------------------------------
 
+
 Exponent is kind of like Rails for React Native. Lots of things are set up for you, so it's quicker to get started
 and on the right path.
 
@@ -53,7 +54,7 @@ Here are some of the things Exponent gives you out of the box that work right aw
   have to set up APNS and GCM/FCM or configure ZeroPush or anything like that. We think we've made this as easy as it
   can be right now
 
-* **Facebook Login**
+* **Facebook, Google Login**
 
   This can take a long time to get set up properly yourself, but you should be able to get it working in 10 minutes or
   less on Exponent.
