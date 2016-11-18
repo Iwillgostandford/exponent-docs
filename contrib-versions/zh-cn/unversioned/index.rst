@@ -7,7 +7,7 @@ Exponent是一个手机应用开发工具，可以帮助你用Javascript来开�
 
 Exponent也提供了各种用途的UI组件, 基本上所有应用都会用但是React Native核心不包含的。包括icons, image lightbox, loading overlay还有更多.
 
-有时间的话不如玩一下. 先:ref:`installation` 然后 :ref:`up-and-running`, 去写你的第一个Exponent应用吧!
+有时间的话不如玩一下. 先 :ref:`installation` 然后 :ref:`up-and-running`, 去写你的第一个Exponent应用吧!
 
 如果你不是很熟悉React还有React Native, 你可以从 `React Native Express <http://www.reactnativeexpress.com>`_ 开始.
 
