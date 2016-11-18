@@ -135,6 +135,3 @@ Video
    .. py:method:: dismissFullscreenPlayer()
 
       Switch out of fullscreen display.
-
-
-
