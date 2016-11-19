@@ -33,7 +33,7 @@ Exponent 应用集成 Facebook。Exponent 提供了比较少的 native API, 因�
         * ``'system'`` -- 尝试用系统登录过的 Facebook 账号登录。
 
    :returns:
-      如果用户或者 Facebook 取消登录， ``{ type: 'cancel' }``.
+      如果用户或者 Facebook 取消登录，返回 ``{ type: 'cancel' }``.
 
       否则的话，返回 ``{ type: 'success', token, expires }``. ``token`` 是 access token 字符串，用来请求 Facebook HTTP API。
       ``expires`` 是 token 过期时间，从 epoch 开始按秒计数。你可以存储 access token 到，比如说: ``AsyncStorage``, 然后一直使用到过期时间为止。
@@ -66,6 +66,6 @@ Exponent 应用集成 Facebook。Exponent 提供了比较少的 native API, 因�
 发布 Android  standalone 应用
 """"""""""""""""""""""""""""""""""""""""
 
-1. 编译 standalone app
-2. 运行 ``keytool -list -printcert -jarfile growler.apk | grep SHA1 | awk '{ print $2 }' | xxd -r -p | openssl base64`` (替换 ``growler.apk`` 为第一步生成的apk).
-3. 把第二步输出添加到你的 Facebook 开发 app 页面的 ``Key Hashes`` 选项，在 Basic Settings 下面。保存就好了。
+1. build standalone app
+2. 运行 ``keytool -list -printcert -jarfile growler.apk | grep SHA1 | awk '{ print $2 }' | xxd -r -p | openssl base64`` (替换 ``growler.apk`` 为第 1 步生成的apk).
+3. 把第 2 步输出添加到你的 Facebook 开发 app 页面的 ``Key Hashes`` 选项，在 Basic Settings 下面。保存就好了。
