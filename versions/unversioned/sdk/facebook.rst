@@ -52,12 +52,6 @@ other users can log in.
         * ``'system'`` -- Attempts to log in through the Facebook account currently
           signed in through the device Settings.
 
-      An array specifying the permissions to ask
-        for from Facebook for this login. The permissions are strings as
-        specified in the `Facebook API documentation
-        <https://developers.facebook.com/docs/facebook-login/permissions>`_. The
-        default permissions are ``['public_profile', 'email', 'user_friends']``.
-
    :returns:
       If the user or Facebook cancelled the login, returns ``{ type: 'cancel' }``.
 
