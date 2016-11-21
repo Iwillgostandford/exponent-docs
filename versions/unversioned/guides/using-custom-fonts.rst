@@ -1,24 +1,15 @@
 .. _using-custom-fonts:
 
 ******************
-Using Custom Fonts
+使用自定义字体
 ******************
 
-Both iOS and Android come with their own set of platform fonts but if you want
-to inject some more brand personality into your app, a well picked font can go
-a long way. In this guide we'll walk you through adding a custom font to your
-Exponent app. We'll use `Open Sans
-<https://fonts.google.com/specimen/Open+Sans>`_ from `Google Fonts
-<https://fonts.google.com/>`_ in the example, and the process is identical for
-any other font, so feel free to adapt it to your use case. Before proceeding,
-go ahead and download `Open Sans
-<https://fonts.google.com/specimen/Open+Sans>`_
+iOS 和 Android 系统都有他们自带的平台字体，但如果你想给你的 app 增加更多的商标特性，一种精心挑选的字体会帮大忙。在这份指南中，我们会指导你如何在你的Exponent app 中添加自定义字体。我们将会使用谷歌字体<https://fonts.google.com/>`_中的 Open Sans <https://fonts.google.com/specimen/Open+Sans>`_作为示例，其他任意字体的添加过程也是一样的，所以请放心地在你的 use case 中添加这个字体。开始之前，让我们前往这个网站并下载好 Open Sans <https://fonts.google.com/specimen/Open+Sans>`_。
 
-Starting code
+初始代码
 =============
 
-First let's start with a basic "Hello world!" app. Create a new project in XDE/exp and change
-``main.js`` to the following:
+首先我们从一个以 ”Hello world!” 为基础的 app开始。在 XDE/exp 中新建一个项目并以以下示例修改 main.js：
 
 .. code-block:: javascript
 
@@ -44,40 +35,25 @@ First let's start with a basic "Hello world!" app. Create a new project in XDE/e
 
   Exponent.registerRootComponent(App);
 
-Try getting this basic app running before playing with Open Sans, so you can
-get any basic setup issues out of the way.
+尝试用让这个 app 在没有加入 Open Sans 之前运行起来，这样你可以避免一些基础的设置问题。
 
-Downloading the font
+下载字体
 ====================
 
-Take the Open Sans zipfile that you downloaded, extract it and copy
-``OpenSans-Bold.ttf`` into the assets directory in your project. The location
-we recommend is ``your-project/assets/fonts``.
+打开你下载的 Open Sans 压缩文件，解压它并将其中的``OpenSans-Bold.ttf``复制到你的资源地址中。我们推荐的位置是``your-project/assets/fonts``。
 
 .. .. epigraph::
 ..   **Note:** We don't *have to* download the font, we could alternatively load it from the web. We recommend it, though, so that it doesn't just disappear on you like things on the web sometimes do.
 
-Loading the font in your app
+载入字体
 ============================
 
-To load and use fonts we will use the :ref:`Exponent SDK <exponent-sdk>`, which
-comes pre-installed when you create a new Exponent project, but if for some
-reason you don't have it, you can install with ``npm install --save exponent``
-in your project directory. Add the following ``import`` in your application
-code:
-
+我们将会通过:ref:`Exponent SDK <exponent-sdk>` 组件载入并使用字体，这个组件在你新建一个新的 Exponent 项目时已经预安装好了。但是如果出于某些奇怪的原因，你可能还没安装好它，这时候你可以通过``npm install --save exponent``将其安装在你的项目地址中。添加下列的``import``在你的应用代码中：
 .. code-block:: javascript
 
    import { Font } from 'exponent';
 
-The ``exponent`` library provides an API to access native functionality of the
-device from your JavaScript code. ``Font`` is the module that deals with
-font-related tasks. First, we must load the font from our assets directory using
-:func:`Exponent.Font.loadAsync`. We can do this in the `componentDidMount()
-<https://facebook.github.io/react/docs/component-specs.html#mounting-componentdidmount>`_
-lifecycle method of the ``App`` component. Add the following method in ``App``:
-Now that we have the font files saved to disk and the Font SDK imported, let's
-add this code:
+``exponent``库中提供了一个在你的 JaveScript 代码中接入设备原生功能的 API。``Font``是一个用来处理字体相关任务的模块。首先，我们需要以下功能 :func:`Exponent.Font.loadAsync` 从资源地址中载入字体。我们可以用``App``组件中的生命周期方式 componentDidMount() <https://facebook.github.io/react/docs/component-specs.html#mounting-componentdidmount>`_来实现这个。在``App``中添加如下代码所示的方法。现在我们已经把字体文件存储在磁盘中而且 Font SDK 也已经导入，代码如下：
 
 .. code-block:: javascript
 
@@ -91,22 +67,15 @@ add this code:
         // ...
       }
 
-This loads Font Awesome and associates it with the name ``'open-sans-bold'`` in
-Exponent's font map. Now we just have to refer to this font in our ``Text``
-component.
+这会载入 Font Awesome 并且在 Exponent 中的字体映射中与``'open-sans-bold'``链接起来。现在我们只需要在``Text``组件中将其调取。
 
 .. epigraph::
-  **Note:** Fonts loaded through Exponent don't currently support the ``fontWeight`` or ``fontStyle`` properties -- you will need to load those variations of the font and specify them by name, as we have done here with bold.
+  **说明:** 在 Exponent 载入的字体目前不支持字体高度（``fontWeight``）与风格（``fontStyle``）等特性――你需要载入这些字体的变式并将他们以名称来指定，正如我们在这里对 bold 的操作。
 
-Using the font in a ``Text`` component
+使用字体
 ======================================
 
-You may remember that in React Native you specify fonts in ``Text`` components
-using the ``fontFamily`` style property. Since it can be confusing to keep track
-of the font family for the various .ttf files you load, Exponent provides the
-function :func:`Exponent.Font.style` which returns the style properties
-(including ``fontFamily``) for a font that you specify by name. So all you need
-to do is change your ``Text`` element to the following:
+你或许还记得在 React Native 中使用``fontFamily``特性来在``Text``部分中指定字体。因为跟踪你载入的不同的字体文件有时会引起混淆，Exponent 提供了函数:func:`Exponent.Font.style` 用来返回你指定名字的字体的风格特性（包括``fontFamily``），所以你需要依照如下的代码来改变你的``Text``元素。
 
 .. code-block:: javascript
 
@@ -114,25 +83,17 @@ to do is change your ``Text`` element to the following:
             Hello, world!
           </Text>
 
-On next refresh the app seems to still not display the text with Open Sans Bold.
-You will see that it is still using the default system font. The problem is that
-:func:`Exponent.Font.loadAsync` is an asynchronous call and takes some time to
-complete. Before it completes, the ``Text`` component is already rendered with
-the default font since it can't find the ``'open-sans-bold'`` font (which hasn't been
-loaded yet).
+之后刷新 App 似乎字体还不是以 Open Sans Bold 显示，你会看到它还是以系统默认字体显示。这个问题是因为 :func:`Exponent.Font.loadAsync`  是一个异步请求并且需要一定的时间去完成。在它完成之前，``Text``部分已经在默认字体上渲染了，因为它找不到``'open-sans-bold'``（因为还没有被载入）
 
 .. epigraph::
-  **Note:** If you're curious, go ahead and add ``console.log(Font.style('open-sans-bold'));`` to your code and you'll see that it evaluates to {fontFamily: 'some-long-id-open-sans-bold'}. We prepend the family name with a session id in order to prevent fonts from different apps opened through Exponent from clashing.
+  **说明:** 如果你感到好奇你可以在你的代码中加入``console.log(Font.style('open-sans-bold'));``; 然后你可以看到它的值为 {fontFamily: 'some-long-id-open-sans-bold'}。为了避免因为通过 Exponent 打开的多个应用的字体崩溃，我们用session id 预设 family name。
 
-Waiting for the font to load before rendering
+在渲染之前等待字体载入
 =============================================
 
-We need a way to re-render the ``Text`` component when the font has finished
-loading. We can do this by keeping a boolean value ``fontLoaded`` in the ``App``
-component's state that keeps track of whether the font has been loaded. We
-render the ``Text`` component only if ``fontLoaded`` is ``true``.
+我们需要在字体加载完毕之后重新渲染``Text``部分。可以在``App``部分的 state 里创建一个 boolean 值: ``fontLoaded``, 用来跟踪字体是否已加载完毕。只有在``fontLoaded``变为``true``之后我们才渲染``Text``部分。
 
-First we initialize ``fontLoaded`` to false in the ``App`` class constructor:
+首先在``App``类构造时我们初始化``fontLoaded``为 false：
 
 .. code-block:: javascript
 
@@ -144,10 +105,7 @@ First we initialize ``fontLoaded`` to false in the ``App`` class constructor:
       // ...
     }
 
-Next, we must set ``fontLoaded`` to ``true`` when the font is done loading.
-:func:`Exponent.Font.loadAsync` returns a ``Promise`` that is fulfilled when the
-font is successfully loaded and ready to use. So we can use `async/await <https://blog.getexponent.com/react-native-meets-async-functions-3e6f81111173>`_
-with ``componentDidMount()`` to wait until the font is loaded, then update our state.
+接着，当字体完成载入时，我们必须把``fontLoaded``设为``true``。当字体成功加载和可以使用时，:func:`Exponent.Font.loadAsync`会返回一个值：``Promise``。所以当我们用``componentDidMount()``来使用`async/await <https://blog.getexponent.com/react-native-meets-async-functions-3e6f81111173>`_并等待直到字体成功加载，然后更新状态。
 
 .. code-block:: javascript
 
@@ -163,8 +121,7 @@ with ``componentDidMount()`` to wait until the font is loaded, then update our s
         // ...
       }
 
-Finally, we want to only render the ``Text`` component if ``fontLoaded`` is
-``true``. We can do this by replacing the ``Text`` element with the following:
+最后，我们只想渲染``Text``部分如果``fontLoaded``的值为``true``，我们可以通过用以下操作取代``Text``元素：
 
 .. code-block:: javascript
 
@@ -177,10 +134,7 @@ Finally, we want to only render the ``Text`` component if ``fontLoaded`` is
               ) : null
             }
           </View>
-
-A ``null`` child element is simply ignored by React Native, so this skips
-rendering the ``Text`` component when ``fontLoaded`` is ``false``. Now on
-refreshing the app you should see that it renders the Font Awesome glass icon!
+React Native 会简单地无视值为``null``的子元素，所以当``fontLoaded``的值为``false``时，这会跳过渲染``Text``部分。所以现在刷新此app你会看到它渲染了Font Awesome的玻璃图标！
 
 .. epigraph::
-  **Note:** Typically you will want to load your apps primary fonts before the app is displayed to avoid text flashing in after the font loads. The recommended approach is to move the ``Font.loadAsync`` call to your top-level component.
+  **说明:** 通常你希望想要在app显示前载入默认字体来在字体载入之后避免文字闪烁。一个推荐的方法是移动``Font.loadAsync``命令到顶层组件。
