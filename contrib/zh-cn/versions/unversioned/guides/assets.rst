@@ -32,4 +32,4 @@ Assets 不同阶段
 
 :ref:`@exponent/vector-icons <icons>` 提供icon fonts, icons第一次加载是 FOIT, 之后的加载字体都会自动缓存。用户对手机比 Web 有更高的要求，所以你可能需要更进一步，在初始加载的时候，预加载字体和重要的图片。
 
-:ref:`了解更多关于预加载和缓存assets <preloading-and-caching-assets>`.
+:ref:`了解更多关于预加载和缓存assets <preloading-and-caching-assets>`_.
