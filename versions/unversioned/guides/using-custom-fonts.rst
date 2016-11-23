@@ -134,7 +134,7 @@ iOS 和 Android 系统都有他们自带的平台字体，但如果你想给你�
               ) : null
             }
           </View>
-React Native 会简单地无视值为``null``的子元素，所以当``fontLoaded``的值为``false``时，这会跳过渲染``Text``部分。所以现在刷新此app你会看到它渲染了Font Awesome的玻璃图标！
+React Native 会简单地无视值为``null``的子元素，所以当``fontLoaded``的值为``false``时，这会跳过渲染``Text``部分。所以现在刷新此app你会看到它渲染了Font Awesome的玻璃图标。
 
 .. epigraph::
   **说明:** 通常你希望想要在app显示前载入默认字体来在字体载入之后避免文字闪烁。一个推荐的方法是移动``Font.loadAsync``命令到顶层组件。
