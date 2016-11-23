@@ -1,37 +1,37 @@
-.. _up-and-running:
+..建立和运行:
 
 **************
-Up and Running
+建立和运行
 **************
 
-The aim of this first guide is to get an Exponent application up and running as quickly as possible.
+这份指南的目标就是建立一个 Exponent 程序并尽可能让它运行起来。
 
-At this point we should have XDE installed on our development machine and the Exponent client on an iOS or Android physical device or emulator. If not, go back to the `Installation <../introduction/installation.html>`_ guide before proceeding.
+关于这个，我们应该在机器开发环境中安装好了 XDE 和在 emulator 中安装好了 Exponent 的服务。如果没有，现在在继续之前返回的安装指南`Installation <../introduction/installation.html>`_ 。
 
-Alright, let's get started.
+好了，让我们开始吧！
 
-Create an account
+创建一个新账户。
 """""""""""""""""
 
-Upon opening XDE you will be prompted for a username and password. Fill this in with your desired username and password and hit continue -- if the username isn't already taken, then we will automatically create the account for you.
+在打开 XDE 之前，你会被要求输入用户名和密码。用你喜欢的用户名和密码填完这个表格并点击继续按钮——如果用户名还没被用，我们会自动新建一个账户给你。
 
-Creating the project
+创建项目
 """"""""""""""""""""
 
-Press ``Project`` and select ``New Project``, then choose the ``Tab Navigation`` option since that will give us a good starting point, then enter the name of your project in the dialog that pops up. I'll call mine ``first-project``, and press create.
+按下``Project``并选择``New Project``，然后选择``Tab Navigation``选项因为这会是一个好的开始，然后在弹出窗口输入你的项目名称，在这里我将其命名为``first-project``，然后点创建。
 
-Next, choose where to save the project. I keep all of my fun projects in ``~/coding``, so I navigate to that directory and press open.
+然后，选择项目的储存位置，我在``~/coding``保存了我所有的有趣项目，所以我找到了那个目录并点击了打开。
 
-XDE is now initializing a new project in selected directory: it copies a basic template and installs ``react``, ``react-native`` and ``exponent``.
+现在 XDE 已被初始化，而且新项目已经在指定目录建立好了：它复制了基本的模板和安装了``react``, ``react-native``和``exponent``。
 
-When the project is initialized and ready to go you will see the message "React packager ready" in the XDE logs.
+但项目已经初始化而且可以使用时，你会在 XDE 记录中看到"React packager ready"的字样。
 
-The "React packager" is a simple HTTP server that compiles our app JavaScript code using `Babel <https://babeljs.io/>`_ and serves it to the Exponent app.
+"React packager" 是一个用`Babel <https://babeljs.io/>`_来编译我们的 app JavaScript 代码的简单的 HHTP 服务，并将其呈递到 Exponent app 中。
 
 .. epigraph::
-  **Note:** If you are on MacOS and XDE gets stuck on "Waiting for packager and tunnel to start", you may need to `install watchman on your machine <https://facebook.github.io/watchman/docs/install.html#build-install>`_. The easiest way to do this is with `Homebrew <http://brew.sh/>`_, ``brew install watchman``.
+  **提示:** 如果你使用的是 MacOS 然后 XDE 卡在了"Waiting for packager and tunnel to start"，你可能需要`安装 watchman 在你的机器 <https://facebook.github.io/watchman/docs/install.html#build-install>`_。最简单的方法是使用`Homebrew <http://brew.sh/>`_, ``brew install watchman``。
 
-Open the app on your phone or simulator
+在你的手机或者虚拟机上打开应用
 """""""""""""""""""""""""""""""""""""""
 
 You'll see that XDE shows you a URL like ``http://4v-9wa.notbrent.mynewproject.exp.direct:80``- feel free to open this up in your browser, you will see that it serves up some JSON. This JSON is the Exponent manifest.
