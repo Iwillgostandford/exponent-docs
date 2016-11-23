@@ -20,7 +20,7 @@ clean:
 update-exp-json-guide:
 	DOCS_VERSION=$(DEFAULT_VERSION) node scripts/generate-exp-docs.js versions/$(DEFAULT_VERSION)/guides/configuration.rst
 
-serve: clean update-exp-json-guide
+serve: clean 
 	DOCS_VERSION=$(DEFAULT_VERSION) sphinx-autobuild --host 0.0.0.0 . _build/html
 
 watch:
