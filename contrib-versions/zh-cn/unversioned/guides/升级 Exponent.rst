@@ -8,4 +8,4 @@
 
 **升级指南依照不同的 sdkVersion 会有变化，所以请参照下面的升级说明。**
 
-我们会在`The Exponent Log <https://blog.getexponent.com/>`_上更新我们的新版本消息，例如`v8.0.0 release notes <https://blog.getexponent.com/exponent-sdk-v8-0-0-is-available-581255a279b1#.iw6pjhknl>`_。但是如果你更新超过1个以上重要版本，我们推荐你根据目标版本和现在版本的中间版本的指南更新。
+我们会在 `The Exponent Log <https://blog.getexponent.com/>`_ 上更新我们的新版本消息，例如 `v8.0.0 release notes <https://blog.getexponent.com/exponent-sdk-v8-0-0-is-available-581255a279b1#.iw6pjhknl>`_ 。但是如果你更新超过1个以上重要版本，我们推荐你根据目标版本和现在版本的中间版本的指南更新。
